@@ -190,6 +190,8 @@ obj-$(CONFIG_ARCH_MSM8X60) += devices-msm8x60.o clock-local.o clock-8x60.o acpuc
 obj-$(CONFIG_ARCH_MSM8X60) += clock-rpm.o
 obj-$(CONFIG_ARCH_MSM8X60) += saw-regulator.o
 obj-$(CONFIG_ARCH_MSM8X60) += footswitch-8x60.o
+obj-$(CONFIG_ARCH_MSM8960) += htc_acoustic_8960.o
+obj-$(CONFIG_MSM8X60_AUDIO) += htc_acoustic_8x60.o
 
 ifdef CONFIG_MSM_RPM_REGULATOR
 obj-y += rpm-regulator.o
@@ -304,6 +306,14 @@ obj-$(CONFIG_MACH_SAPPHIRE) += board-sapphire.o board-sapphire-gpio.o
 obj-$(CONFIG_MACH_SAPPHIRE) += board-sapphire-keypad.o board-sapphire-panel.o
 obj-$(CONFIG_MACH_SAPPHIRE) += board-sapphire-mmc.o board-sapphire-wifi.o
 obj-$(CONFIG_MACH_SAPPHIRE) += board-sapphire-rfkill.o msm_vibrator.o
+obj-$(CONFIG_MACH_PYRAMID) += board-pyramid.o devices_htc.o
+obj-$(CONFIG_MACH_PYRAMID) += board-pyramid-keypad.o 
+obj-$(CONFIG_MACH_PYRAMID) += board-pyramid-camera.o htc_awb_cal.o
+obj-$(CONFIG_MACH_PYRAMID) += htc_bdaddress.o board-pyramid-rfkill.o
+obj-$(CONFIG_MACH_PYRAMID) += board-pyramid-mmc.o board-pyramid-wifi.o htc_wifi_nvs.o
+obj-$(CONFIG_MACH_PYRAMID) += htc_util.o
+obj-$(CONFIG_MACH_PYRAMID) += board-pyramid-audio.o
+obj-$(CONFIG_MACH_PYRAMID) += board-pyramid-display.o
 
 obj-$(CONFIG_MACH_LGE) += lge/
 
@@ -315,8 +325,16 @@ CFLAGS_board-9615.o += -Idrivers/usb/gadget
 obj-$(CONFIG_ARCH_FSM9XXX) += board-fsm9xxx.o
 
 obj-$(CONFIG_TROUT_BATTCHG) += htc_battery.o
+obj-$(CONFIG_HTC_BATT_CORE) += htc_battery_core.o
+obj-$(CONFIG_HTC_BATT8x60) += htc_battery_8x60.o
+obj-$(CONFIG_HTC_BATT_8960) += htc_battery_8960.o htc_battery_cell.o
 
 obj-$(CONFIG_HTC_PWRSINK) += htc_pwrsink.o
+obj-$(CONFIG_HTC_HEADSET_MGR) += htc_headset_mgr.o
+obj-$(CONFIG_HTC_HEADSET_PMIC) += htc_headset_pmic.o
+obj-$(CONFIG_HTC_HEADSET_GPIO) += htc_headset_gpio.o
+obj-$(CONFIG_HTC_HEADSET_8X60) += htc_headset_8x60.o
+obj-$(CONFIG_HTC_HEADSET_ONE_WIRE) += htc_headset_one_wire.o
 obj-$(CONFIG_HTC_HEADSET) += htc_headset.o
 obj-$(CONFIG_MSM_RMT_STORAGE_CLIENT) += rmt_storage_client.o
 obj-$(CONFIG_MSM_SDIO_SMEM) += sdio_smem.o

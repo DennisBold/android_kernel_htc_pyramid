@@ -483,6 +483,14 @@ config MSM_ADM3
 
 menu "MSM Board Selection"
 
+config MACH_PYRAMID
+	depends on ARCH_MSM8X60
+	default n
+	bool "Pyramid"
+	select FB_MSM_MIPI_DSI
+	help
+	  Support for the Pyramid device.
+
 config MACH_HALIBUT
 	depends on ARCH_MSM7X01A
 	depends on MSM_STACKED_MEMORY
@@ -1208,6 +1216,13 @@ config CPU_HAS_L2_PMU
 	bool "L2CC PMU Support"
 	help
 	 Select this if the L2 cache controller has a Performance Monitoring Unit.
+
+config HTC_HEADSET_ONE_WIRE
+	tristate "HTC 1-wire headset detection driver"
+	depends on HTC_HEADSET_MGR
+	default n
+	help
+	  Provides support of HTC 1-wire headset detection.
 
 config HTC_HEADSET
 	tristate "HTC 2 Wire detection driver"
