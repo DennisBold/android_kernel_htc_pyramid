@@ -314,10 +314,9 @@ obj-$(CONFIG_MACH_PYRAMID) += board-pyramid-mmc.o board-pyramid-wifi.o htc_wifi_
 obj-$(CONFIG_MACH_PYRAMID) += htc_util.o
 obj-$(CONFIG_MACH_PYRAMID) += board-pyramid-audio.o
 obj-$(CONFIG_MACH_PYRAMID) += board-pyramid-display.o
-
 obj-$(CONFIG_MACH_LGE) += lge/
-
 obj-$(CONFIG_MACH_HTC) += htc/
+obj-$(CONFIG_MACH_HTC_8660) += htc-8660/
 
 CFLAGS_msm_vibrator.o += -Idrivers/staging/android
 CFLAGS_board-9615.o += -Idrivers/usb/gadget
